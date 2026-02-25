@@ -325,6 +325,18 @@ footer { background: var(--ink); padding: 28px 60px; display: flex; align-items:
   .interests-grid { grid-template-columns: 1fr; }
 }
 
+/* ── CERTIFICATIONS ── */
+.cert-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; margin-bottom: 60px; }
+.cert-card { background: var(--white); border: 1px solid var(--border); padding: 24px; display: flex; flex-direction: column; gap: 14px; transition: border-color 0.2s, transform 0.2s; }
+.cert-card:hover { border-color: var(--green); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(46,125,82,0.08); }
+.cert-badge { width: 80px; height: 80px; border-radius: 4px; overflow: hidden; flex-shrink: 0; }
+.cert-badge img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.cert-issuer { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-muted); }
+.cert-name { font-size: 0.92rem; font-weight: 600; color: var(--ink); line-height: 1.4; }
+.cert-meta { font-size: 0.75rem; color: var(--ink-muted); }
+.cert-verify { display: inline-flex; align-items: center; gap: 6px; font-size: 0.7rem; font-weight: 600; color: var(--green); text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; border-bottom: 1px solid rgba(46,125,82,0.25); padding-bottom: 2px; transition: border-color 0.2s; margin-top: auto; width: fit-content; }
+.cert-verify:hover { border-color: var(--green); }
+
 /* ── COLLAPSIBLE EXPERIENCE ── */
 .exp-toggle { cursor: pointer; display: flex; align-items: center; justify-content: space-between; user-select: none; }
 .exp-toggle-icon { width: 22px; height: 22px; border-radius: 50%; border: 1px solid var(--border-dark); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.2s, border-color 0.2s; }
@@ -607,6 +619,8 @@ footer { background: var(--ink); padding: 28px 60px; display: flex; align-items:
       </div>
     </div>
   </div>
+
+  
 </section>
 
 <!-- EDUCATION -->
@@ -628,6 +642,35 @@ footer { background: var(--ink); padding: 28px 60px; display: flex; align-items:
         <span class="honor"><i class="fa-solid fa-star" style="color:var(--warm);margin-right:5px;"></i> Dean's List 2018–2022</span>
       </div>
     </div>
+  </div>
+
+  <div class="section-eyebrow" style="margin-top:52px;">Certifications</div>
+  <div class="cert-grid fade-up">
+    <div class="cert-card">
+      <div class="cert-badge">
+        <!-- Image sourced from your assets folder on deployment -->
+        <img src="Images/data-fundamentals.png" alt="IBM Data Fundamentals Badge">
+      </div>
+      <div class="cert-issuer">IBM SkillsBuild</div>
+      <div class="cert-name">Data Fundamentals</div>
+      <div class="cert-meta">Issued 2026</div>
+      <a href="https://www.credly.com/badges/8ba99f7f-12cc-4780-b7a0-ad6fa36f5604" target="_blank" rel="noopener" class="cert-verify">
+        <i class="fa-solid fa-circle-check"></i> Verify on Credly
+      </a>
+    </div>
+   <!-- <div class="cert-card">
+      <div class="cert-badge">
+        
+        <img src="Images/data-fundamentals.png" alt="IBM Data Fundamentals Badge">
+      </div>
+      <div class="cert-issuer">IBM SkillsBuild</div>
+      <div class="cert-name">Data Fundamentals</div>
+      <div class="cert-meta">Issued 2026</div>
+      <a href="https://www.credly.com/badges/8ba99f7f-12cc-4780-b7a0-ad6fa36f5604" target="_blank" rel="noopener" class="cert-verify">
+        <i class="fa-solid fa-circle-check"></i> Verify on Credly
+      </a>
+    </div> -->
+    <!-- Note to self : Add more cert-card blocks here as you earn more certifications -->
   </div>
 
   <div class="section-eyebrow" style="margin-top:56px;">Communication</div>
