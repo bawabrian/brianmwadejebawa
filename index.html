@@ -4,9 +4,31 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Brian  Bawa</title>
-<link rel="icon" type="image/png" href="Images/favicon.png">
+<!-- <link rel="icon" type="text" href="Images/favicon.png"> -->
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script>
+  // Favicon: green circle with white B, matching the site brand
+  document.addEventListener('DOMContentLoaded', function() {
+    const canvas = document.createElement('canvas');
+    canvas.width = 64; canvas.height = 64;
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#2E7D52';
+    ctx.beginPath();
+    ctx.arc(32, 32, 32, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.fillStyle = '#ffffff';
+    ctx.font = 'bold 40px Georgia, serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText('B', 32, 34);
+    const link = document.createElement('link');
+    link.rel = 'icon';
+    link.type = 'image/png';
+    link.href = canvas.toDataURL('image/png');
+    document.head.appendChild(link);
+  });
+</script>
 <style>
 :root {
   --bg: #F7F9F7;
@@ -302,6 +324,15 @@ footer { background: var(--ink); padding: 28px 60px; display: flex; align-items:
   .skills-grid { grid-template-columns: 1fr; }
   .interests-grid { grid-template-columns: 1fr; }
 }
+
+/* ── COLLAPSIBLE EXPERIENCE ── */
+.exp-toggle { cursor: pointer; display: flex; align-items: center; justify-content: space-between; user-select: none; }
+.exp-toggle-icon { width: 22px; height: 22px; border-radius: 50%; border: 1px solid var(--border-dark); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.2s, border-color 0.2s; }
+.exp-toggle-icon i { font-size: 0.6rem; color: var(--green); transition: transform 0.3s ease; }
+.exp-toggle:hover .exp-toggle-icon { background: var(--green-pale); border-color: var(--green); }
+.exp-body { overflow: hidden; max-height: 0; transition: max-height 0.4s ease, opacity 0.3s ease; opacity: 0; }
+.exp-body.open { max-height: 800px; opacity: 1; }
+.exp-entry.active .exp-toggle-icon i { transform: rotate(180deg); }
 </style>
 </head>
 <body>
@@ -325,7 +356,7 @@ footer { background: var(--ink); padding: 28px 60px; display: flex; align-items:
   <div class="hero-left">
     <div class="hero-eyebrow">Finance &amp; Business Analysis Professional</div>
     <h1 class="hero-name">Brian<br><em>Mwadeje</em><br>Bawa</h1>
-    <p class="hero-role">Analyst · Controller · Founder · Dashboard Builder</p>
+    <p class="hero-role"><i>Finance· Data · Building things that matter!</i></p>
     <p class="hero-desc">Delivering data-driven insights and streamlining financial operations across diverse industries. Bridging finance and technology — with a deep commitment to mission-driven impact across Africa.</p>
     <div class="hero-chips">
       <span class="chip"><i class="fa-solid fa-location-dot"></i> Nairobi, Kenya</span>
@@ -334,7 +365,7 @@ footer { background: var(--ink); padding: 28px 60px; display: flex; align-items:
       <span class="chip"><i class="fa-solid fa-language"></i> 4 Languages</span>
     </div>
     <div class="hero-actions">
-      <a href="#contact" class="btn-sage">Get In Touch</a>
+      <a href="https://drive.google.com/file/d/1gCN1Lr2FA2LvrloXwDlvl2rhT_N3Y2ax/view?usp=drive_link" target="_blank" class="btn-sage"><i class="fa-solid fa-file-lines"> </i>  Download CV</a>
       <a href="https://github.com/bawabrian" target="_blank" class="btn-ghost"><i class="fa-brands fa-github"></i> &nbsp;GitHub</a>
     </div>
   </div>
@@ -412,79 +443,105 @@ footer { background: var(--ink); padding: 28px 60px; display: flex; align-items:
 
     <div class="exp-entry fade-up">
       <div class="exp-dot"></div>
-      <div class="exp-meta">May 2025 – Present</div>
-      <div class="exp-role">Freelance Accountant</div>
-      <div class="exp-company">Self-Employed · Nairobi, Kenya (Remote)</div>
-      <ul class="exp-bullets">
+      <div class="exp-toggle" onclick="toggleExp(this)">
+        <div>
+          <div class="exp-meta">May 2025 – Present</div>
+          <div class="exp-role">Freelance Accountant</div>
+          <div class="exp-company">Self-Employed · Nairobi, Kenya (Remote)</div>
+        </div>
+        <div class="exp-toggle-icon"><i class="fa-solid fa-chevron-down"></i></div>
+      </div>
+      <div class="exp-body">
+        <ul class="exp-bullets">
         <li>Deliver comprehensive accounting and advisory services to SMEs across retail, hospitality, and professional services sectors.</li>
         <li>Execute full-cycle bookkeeping, reconciliation, tax filing, and KRA representation ensuring full regulatory compliance.</li>
         <li>Advise on capital budgeting, cash flow forecasting, and business plan development.</li>
       </ul>
-      <div class="exp-wins">
+        <div class="exp-wins">
         <div class="exp-win"><i class="fa-solid fa-check"></i> Secured funding for Cutz Castle through structured business plans and financial projections</div>
         <div class="exp-win"><i class="fa-solid fa-check"></i> Engineered automated tracking systems in Google Sheets &amp; Excel, eliminating manual errors</div>
         <div class="exp-win"><i class="fa-solid fa-check"></i> Achieved 100% on-time KRA filing compliance across all client accounts</div>
       </div>
-    </div>
-
-    <div class="exp-entry fade-up delay-1">
+      </div>
+    </div>    <div class="exp-entry fade-up delay-1">
       <div class="exp-dot"></div>
-      <div class="exp-meta">August 2024 – Present</div>
-      <div class="exp-role">Founder &amp; CEO <span style="font-family:'Inter',sans-serif;font-size:0.78rem;font-weight:400;color:var(--ink-muted);">(Chief Everything Officer)</span></div>
-      <div class="exp-company">Bawacap Limited · Nairobi, Kenya</div>
-      <ul class="exp-bullets">
+      <div class="exp-toggle" onclick="toggleExp(this)">
+        <div>
+          <div class="exp-meta">August 2024 – Present</div>
+          <div class="exp-role">Founder &amp; CEO <span style="font-family:'Inter',sans-serif;font-size:0.78rem;font-weight:400;color:var(--ink-muted);">(Chief Everything Officer)</span></div>
+          <div class="exp-company">Bawacap Limited · Nairobi, Kenya</div>
+        </div>
+        <div class="exp-toggle-icon"><i class="fa-solid fa-chevron-down"></i></div>
+      </div>
+      <div class="exp-body">
+        <ul class="exp-bullets">
         <li>Founded and lead an infrastructure company delivering cellular tower construction in underserved regions, building the physical backbone of digital inclusion across Africa.</li>
         <li>Provide strategic leadership and operational oversight including finance, budgeting, procurement, compliance, and contract management.</li>
         <li>Lead project planning and execution, coordinating subcontractors, suppliers, and site teams to ensure timely delivery.</li>
         <li>Drive business development, client relationships, and partnerships while maintaining cost control and sustainable growth.</li>
       </ul>
-    </div>
-
-    <div class="exp-entry fade-up delay-2">
+        
+      </div>
+    </div>    <div class="exp-entry fade-up delay-2">
       <div class="exp-dot"></div>
-      <div class="exp-meta">May 2024 – April 2025</div>
-      <div class="exp-role">Business Analyst</div>
-      <div class="exp-company">Maids.cc · Dubai, U.A.E (Remote)</div>
-      <ul class="exp-bullets">
+      <div class="exp-toggle" onclick="toggleExp(this)">
+        <div>
+          <div class="exp-meta">May 2024 – April 2025</div>
+          <div class="exp-role">Business Analyst</div>
+          <div class="exp-company">Maids.cc · Dubai, U.A.E (Remote)</div>
+        </div>
+        <div class="exp-toggle-icon"><i class="fa-solid fa-chevron-down"></i></div>
+      </div>
+      <div class="exp-body">
+        <ul class="exp-bullets">
         <li>Analysed operational and financial datasets using SQL and Excel to inform strategic decisions in the operations department.</li>
         <li>Designed Tableau dashboards surfacing recruitment trends and KPIs for leadership in real time.</li>
         <li>Served as primary liaison between Kenyan Immigration authorities and UAE Embassy, accelerating applicant processing timelines.</li>
       </ul>
-      <div class="exp-wins">
+        <div class="exp-wins">
         <div class="exp-win"><i class="fa-solid fa-check"></i> Architected strategic separation of African recruitment flow into dedicated Ugandan and Kenyan pipelines</div>
         <div class="exp-win"><i class="fa-solid fa-check"></i> Deployed Documents OCR system enabling fully automated electronic data capture</div>
       </div>
-    </div>
-
-    <div class="exp-entry fade-up">
+      </div>
+    </div>    <div class="exp-entry fade-up">
       <div class="exp-dot"></div>
-      <div class="exp-meta">January 2023 – April 2024</div>
-      <div class="exp-role">Junior Financial Controller</div>
-      <div class="exp-company">Southern Sahil Company Limited · Nairobi, Kenya</div>
-      <ul class="exp-bullets">
+      <div class="exp-toggle" onclick="toggleExp(this)">
+        <div>
+          <div class="exp-meta">January 2023 – April 2024</div>
+          <div class="exp-role">Junior Financial Controller</div>
+          <div class="exp-company">Southern Sahil Company Limited · Nairobi, Kenya</div>
+        </div>
+        <div class="exp-toggle-icon"><i class="fa-solid fa-chevron-down"></i></div>
+      </div>
+      <div class="exp-body">
+        <ul class="exp-bullets">
         <li>Oversaw the full accounting function — revenue, expenditure, and payroll — ensuring accurate monthly reconciliation.</li>
         <li>Managed accounts receivable end-to-end including invoicing, collections, and overdue follow-up.</li>
       </ul>
-      <div class="exp-wins">
+        <div class="exp-wins">
         <div class="exp-win"><i class="fa-solid fa-check"></i> Redesigned budgeting framework, identifying inefficiencies that materially improved operating margins</div>
         <div class="exp-win"><i class="fa-solid fa-check"></i> Led adoption of Salesforce, Slack &amp; Zoom, transforming remote team productivity</div>
       </div>
-    </div>
-
-    <div class="exp-entry fade-up">
+      </div>
+    </div>    <div class="exp-entry fade-up">
       <div class="exp-dot"></div>
-      <div class="exp-meta">May 2022 – December 2022</div>
-      <div class="exp-role">Accounting Intern</div>
-      <div class="exp-company">Gulf Cross Limited · Mombasa, Kenya</div>
-      <ul class="exp-bullets">
+      <div class="exp-toggle" onclick="toggleExp(this)">
+        <div>
+          <div class="exp-meta">May 2022 – December 2022</div>
+          <div class="exp-role">Accounting Intern</div>
+          <div class="exp-company">Gulf Cross Limited · Mombasa, Kenya</div>
+        </div>
+        <div class="exp-toggle-icon"><i class="fa-solid fa-chevron-down"></i></div>
+      </div>
+      <div class="exp-body">
+        <ul class="exp-bullets">
         <li>Supported payroll administration, budget monitoring, and financial record maintenance across core accounting functions.</li>
       </ul>
-      <div class="exp-wins">
+        <div class="exp-wins">
         <div class="exp-win"><i class="fa-solid fa-check"></i> Recognised for audit-ready records and identifying cost-saving opportunities across departments</div>
       </div>
-    </div>
-
-  </div>
+      </div>
+    </div>  </div>
 </section>
 
 <!-- PROJECTS -->
@@ -513,22 +570,20 @@ footer { background: var(--ink); padding: 28px 60px; display: flex; align-items:
     </div>
     <div class="proj-card">
       <div class="proj-img-wrap">
-        <!-- BRIAN: replace the src below with your dashboard screenshot path e.g. src="assets/img/dash2.png" -->
-        <div class="proj-img-placeholder">
-          <i class="fa-solid fa-gauge-high"></i>
-          <span>Dashboard Preview</span>
-        </div>
+        <a href="https://github.com/bawabrian/PizzaOut_Data_Analysis_Project"
+       target="_blank"
+       aria-label="View PizzaOut Sales Analysis project on GitHub">
+        <img src="Images/Glovo Capture.png"> </a>
       </div>
       <div class="proj-body">
-        <h3>Business KPI Trackers</h3>
-        <p>Operational dashboards monitoring business performance metrics, streamlining reporting cycles, and surfacing actionable insights for decision-makers.</p>
+        <h3>Glovo Sales Analysis</h3>
+        <p>A Power BI dashboard delivering end-to-end insights into grocery sales performance, product mix, and outlet dynamics to support data-driven decision-making.</p>
         <div class="proj-tags">
-          <span class="proj-tag">SQL</span>
-          <span class="proj-tag">Power BI</span>
           <span class="proj-tag">Excel</span>
-          <span class="proj-tag">KPI Reporting</span>
+          <span class="proj-tag">Power BI</span>
+          <span class="proj-tag">SQL</span>
         </div>
-        <a href="https://github.com/bawabrian" target="_blank" class="proj-link">View on GitHub <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="https://github.com/bawabrian/PizzaOut_Data_Analysis_Project" target="_blank" class="proj-link">View on GitHub <i class="fa-solid fa-arrow-right"></i></a>
       </div>
     </div>
     <div class="proj-card">
@@ -743,6 +798,17 @@ footer { background: var(--ink); padding: 28px 60px; display: flex; align-items:
       btn.innerHTML = 'Send Message &nbsp;<i class="fa-solid fa-paper-plane"></i>';
     }
   }
+
+  // Collapsible experience
+  function toggleExp(toggleEl) {
+    const entry = toggleEl.closest('.exp-entry');
+    const body = entry.querySelector('.exp-body');
+    const isOpen = body.classList.contains('open');
+    body.classList.toggle('open', !isOpen);
+    entry.classList.toggle('active', !isOpen);
+  }
+
+
 </script>
 </body>
 </html>
