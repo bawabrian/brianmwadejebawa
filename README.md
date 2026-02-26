@@ -59,7 +59,7 @@ Deployment steps:
 3. Updates go live automatically after each push
 
 Live site:
-👉 https://bawabrian.github.io/brianmwadejebawa/
+[![Portfolio](https://img.shields.io/badge/Portfolio-2E7D52?style=for-the-badge&logo=google-chrome&logoColor=white)](https://bawabrian.github.io/brianmwadejebawa/)
 
 ---
 
