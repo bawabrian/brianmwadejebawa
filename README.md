@@ -63,14 +63,3 @@ Live site:
 
 ---
 
-## Repository Structure
-
-```text
-├── index.html
-├── css/
-│   └── styles.css
-├── js/
-│   └── scripts.js
-├── assets/
-│   └── images/
-└── README.md
