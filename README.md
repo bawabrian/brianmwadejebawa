@@ -1,18 +1,76 @@
-# brianmwadejebawa
+# Personal Website — brianmwadejebawa
 
-Welcome — this is my personal website.
+This repository contains the source code for my personal website, which I built from scratch and deployed using GitHub Pages.
 
-I use this space to share thoughtful explorations of data, dashboards, and the kinds of problems I enjoy working through. I’m interested in how data can be shaped into decisions, how risk shows up in systems, and how clarity can emerge from complexity.
+The site serves as a simple, lightweight space to present my work, interests, and links, without relying on heavy frameworks or external site builders.
 
-I work across tools like Excel, SQL, and Power BI — not for their own sake, but for what they help reveal.
+---
 
-If you’re here to explore projects or see examples of my work, you’ll find them linked along the way in the site.
+## Overview
 
-You can also find me on:
+The website was:
+- Hand-coded using standard web technologies
+- Designed to be minimal, fast, and easy to maintain
+- Deployed directly from GitHub using GitHub Pages
 
-- 🌐 Portfolio home: https://bawabrian.github.io/brianmwadejebawa/
-- 💼 LinkedIn: [your LinkedIn link here]
-- 📧 Email: [your email link here]
-- [Optional other social links]
+The focus was on clarity, structure, and control over the final output rather than using templates or CMS tools.
 
-Thanks for stopping by.
+---
+
+## Tech Stack
+
+- **HTML** — page structure and content
+- **CSS** — layout, styling, and responsiveness
+- **JavaScript** — light interactivity (where applicable)
+- **GitHub Pages** — hosting and deployment
+
+No frameworks or external libraries were used.
+
+---
+
+## Development Process
+
+1. **Structure**
+   - Created the base HTML structure for the site
+   - Organized content into clear sections (intro, work, links, etc.)
+
+2. **Styling**
+   - Wrote custom CSS for layout and typography
+   - Kept styling minimal to prioritize readability and performance
+   - Ensured the site remains usable across screen sizes
+
+3. **Interactivity**
+   - Added lightweight JavaScript where necessary
+   - Avoided unnecessary complexity or dependencies
+
+4. **Version Control**
+   - Used Git for tracking changes
+   - Iterated gradually to keep the codebase simple and understandable
+
+---
+
+## Deployment
+
+The site is hosted using **GitHub Pages**.
+
+Deployment steps:
+1. Push changes to the main branch
+2. GitHub Pages serves the site directly from the repository
+3. Updates go live automatically after each push
+
+Live site:
+👉 https://bawabrian.github.io/brianmwadejebawa/
+
+---
+
+## Repository Structure
+
+```text
+├── index.html
+├── css/
+│   └── styles.css
+├── js/
+│   └── scripts.js
+├── assets/
+│   └── images/
+└── README.md
